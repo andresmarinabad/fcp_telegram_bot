@@ -1,0 +1,7 @@
+.venv/
+.direnv/
+.env
+bot_persistence.pickle
+__pycache__/
+*.py[cod]
+.python-version
