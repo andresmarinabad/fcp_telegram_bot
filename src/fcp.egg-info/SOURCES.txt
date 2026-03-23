@@ -1,0 +1,10 @@
+pyproject.toml
+src/fcp/__init__.py
+src/fcp/bot.py
+src/fcp/fecapa_client.py
+src/fcp.egg-info/PKG-INFO
+src/fcp.egg-info/SOURCES.txt
+src/fcp.egg-info/dependency_links.txt
+src/fcp.egg-info/entry_points.txt
+src/fcp.egg-info/requires.txt
+src/fcp.egg-info/top_level.txt

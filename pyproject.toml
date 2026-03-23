@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "fcp"
 version = "0.1.0"
@@ -8,5 +12,8 @@ dependencies = [
     "requests>=2.31.0",
 ]
 
-[tool.uv]
-package = false
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+fcp-bot = "fcp.bot:main"

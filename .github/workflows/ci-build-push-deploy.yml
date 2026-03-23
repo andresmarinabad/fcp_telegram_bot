@@ -1,0 +1,26 @@
+name: CICD - Build Publish Deploy
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.tf"
+      - "**.md"
+      - ".gitignore"
+      - "infra/**"
+      - ".github/**"
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  build-push-deploy:
+    uses: CodeForgeGuild/ci-actions/.github/workflows/build-push-deploy.yml@v0
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      VM_NAME: ${{ secrets.VM_NAME }}
+      VM_ZONE: ${{ secrets.VM_ZONE }}
+      GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

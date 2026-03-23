@@ -20,7 +20,7 @@ from telegram.ext import (
     PicklePersistence,
 )
 
-import fecapa_client as fc
+from . import fecapa_client as fc
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s %(message)s",
@@ -37,7 +37,8 @@ TG_POOL_TIMEOUT = 45.0
 # getUpdates fa long polling; el read ha ser major que timeout del poll (10s per defecte).
 TG_GET_UPDATES_READ_TIMEOUT = 70.0
 
-ROOT = Path(__file__).resolve().parent
+# Arrel del repositori (bot_persistence.pickle al mateix nivell que pyproject.toml).
+ROOT = Path(__file__).resolve().parents[2]
 PERSISTENCE_PATH = ROOT / "bot_persistence.pickle"
 
 GITHUB_USER = "andresmarinabad"

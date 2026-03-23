@@ -1,0 +1,2 @@
+[console_scripts]
+fcp-bot = fcp.bot:main

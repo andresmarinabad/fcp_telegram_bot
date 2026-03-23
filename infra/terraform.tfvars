@@ -1,0 +1,5 @@
+project_id = ""
+region = "us-central1"
+github_owner = "andresmarinabad"
+github_token = ""
+telegram_bot_token = ""
