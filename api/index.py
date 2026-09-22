@@ -5,6 +5,7 @@ from functools import lru_cache
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from bs4 import BeautifulSoup
 
 from fcp.fecapa_client import (
     TeamInfo,
@@ -34,7 +35,7 @@ app.add_middleware(
 
 
 def _contains_target_group(html: str) -> bool:
-    text = " ".join(__import__("bs4").BeautifulSoup(html, "html.parser").stripped_strings)
+    text = " ".join(BeautifulSoup(html, "html.parser").stripped_strings)
     return TARGET_GROUP.upper() in text.upper()
 
 
