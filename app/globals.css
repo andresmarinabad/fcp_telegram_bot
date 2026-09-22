@@ -1,0 +1,42 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6f8;
+  color: #15171a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f6f8; }
+.container { width: min(100% - 32px, 960px); margin: 0 auto; padding: 32px 0 48px; }
+header { margin-bottom: 24px; }
+.eyebrow { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: #6b7280; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 42px); line-height: 1.05; }
+.competition { margin: 8px 0 0; color: #5d6470; }
+.summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.summary span { padding: 7px 10px; border: 1px solid #e0e3e8; border-radius: 999px; background: white; font-size: 13px; }
+.table-wrap { overflow-x: auto; border: 1px solid #e0e3e8; border-radius: 12px; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+table { width: 100%; border-collapse: collapse; min-width: 650px; }
+th, td { padding: 13px 14px; border-bottom: 1px solid #eceef1; text-align: left; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; background: #fafafa; }
+tbody tr:last-child td { border-bottom: 0; }
+.round { width: 90px; color: #6b7280; font-size: 13px; }
+.date { width: 110px; }
+.date strong, .date span { display: block; }
+.date span { margin-top: 3px; color: #6b7280; font-size: 13px; }
+.match { font-weight: 600; }
+.separator { padding: 0 7px; color: #9aa0a8; }
+.score { width: 100px; font-weight: 700; text-align: center; }
+.pending { font-weight: 400; color: #8a9099; }
+.status, .empty { color: #626975; padding: 16px; }
+.error { padding: 16px; border: 1px solid #e5b8b8; border-radius: 10px; background: #fff6f6; color: #7b2222; }
+.error p { margin-bottom: 0; overflow-wrap: anywhere; }
+footer { margin-top: 18px; color: #8a9099; font-size: 12px; }
+@media (max-width: 600px) {
+  .container { width: min(100% - 20px, 960px); padding-top: 22px; }
+  table { min-width: 0; }
+  th:nth-child(1), td:nth-child(1) { display: none; }
+  th, td { padding: 11px 9px; }
+  .date { width: 76px; }
+  .match { font-size: 14px; }
+  .score { width: 70px; }
+  .separator { padding: 0 3px; }
+}
