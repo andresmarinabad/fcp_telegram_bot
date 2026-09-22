@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 import os
+import sys
 from dataclasses import asdict
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,7 +20,6 @@ from fcp.fecapa_client import (
 )
 
 app = FastAPI(title="FCP Web API")
-
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET"], allow_headers=["*"])
 
 
@@ -78,13 +81,13 @@ def standings():
     cid = competition_id()
     candidates = []
     for headers, rows in parse_standing_tables_with_headers(fetch_classification_html(cid)):
-        for index, row in enumerate(rows):
+        for row in rows:
             if row.name.strip().upper() == team_info.name.strip().upper():
-                candidates.append((headers, rows, index))
+                candidates.append(rows)
                 break
     if not candidates:
         return {"headers": ["Pos", "Equip", "Pts"], "rows": []}
-    _, rows, _ = candidates[0]
+    rows = candidates[0]
     return {
         "headers": ["Pos", "Equip", "Pts"],
         "rows": [
