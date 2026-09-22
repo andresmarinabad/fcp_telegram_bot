@@ -1,7 +1,10 @@
 .venv/
 .direnv/
 .env
+.env.local
 bot_persistence.pickle
 __pycache__/
 *.py[cod]
 .python-version
+node_modules/
+.next/
