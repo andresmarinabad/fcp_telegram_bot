@@ -1,5 +1,5 @@
 {
-  description = "fcp — Python con uv";
+  description = "fcp — Python + Next.js con uv";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -20,6 +20,7 @@
           packages = with pkgs; [
             uv
             python3
+            nodejs
           ];
 
           shellHook = ''
